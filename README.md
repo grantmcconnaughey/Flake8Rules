@@ -1,6 +1,6 @@
 # Flake8 Rules
 
-Documentation for the rules in Flake8, pyflakes, pycodestyle, and mccabe.e
+Documentation for the rules in Flake8, pyflakes, pycodestyle, and mccabe.
 
 ## API
 

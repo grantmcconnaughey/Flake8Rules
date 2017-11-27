@@ -19,8 +19,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Rules and violations for Flake8 (pyflakes, pycodestyle, and McCabe).
   Pulled directly from <a href="https://lintly.com">Lintly</a>, the continuous
   Python code linting application.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/Flake8Rules" # the subpath of your site, e.g. /blog
+url: "https://lintlyci.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gmcconnaughey
 github_username:  grantmcconnaughey
 
