@@ -1,13 +1,13 @@
 # Flake8 Rules
 
-Documentation for the rules in Flake8, pyflakes, pycodestyle, and mccabe.
+Documentation and examples for the rules in [Flake8](http://flake8.pycqa.org/en/latest/index.html), [pyflakes](https://github.com/PyCQA/pyflakes), [pycodestyle](http://pycodestyle.pycqa.org/en/latest/), and [mccabe](https://github.com/pycqa/mccabe).
 
 ## API
 
-Flake8 Rules includes an API with a single endpoint. The endpoint returns a list of all Flake8 rules.
+Flake8 Rules includes an [API with a single endpoint](https://lintlyci.github.io/Flake8Rules/rules.json). The endpoint returns a list of all Flake8 rules.
 
 ```
-$ curl http://127.0.0.1:4000/rules.json
+$ curl https://lintlyci.github.io/Flake8Rules/rules.json
 [
     {
         "code": "F812",
