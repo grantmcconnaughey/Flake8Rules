@@ -1,0 +1,970 @@
+[
+    {
+        "fields": {
+            "code": "E101",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces",
+            "explanation": "Indentation has has both tabs and spaces in it. Programmers should use either tabs or spaces, but [not both](http://imgur.com/VyMu86F).\r\n\r\n### Anti-pattern\r\n\r\n**Note:** The `•` character represents a space and the `→` character represents a tab.\r\n\r\nIn this example, the third line contains four spaces and two tabs.\r\n\r\n```python\r\ndef get_name(self):\r\n    if self.first_name and self.last_name:\r\n••••→ → return self.first_name + ' ' + self.last_name\r\n    else:\r\n        return self.last_name\r\n```\r\n\r\n### Best practice\r\n\r\nChange the line to use spaces only.\r\n\r\n```python\r\ndef get_name(self):\r\n    if self.first_name and self.last_name:\r\n••••••••return self.first_name + ' ' + self.last_name\r\n    else:\r\n        return self.last_name\r\n```",
+            "message": "indentation contains mixed spaces and tabs",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "code": "E111",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "PEP8 recommends that Python code indentation be a multiple of four.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nclass User(object):\r\n  def __init__(self, name):\r\n    self.name = name\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nclass User(object):\r\n    def __init__(self, name):\r\n        self.name = name\r\n```",
+            "message": "indentation is not a multiple of four",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 2
+    },
+    {
+        "fields": {
+            "code": "E112",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "This issue occurs when code is not indented but should be.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef print_list(my_list):\r\n\"\"\"This should be indented\"\"\"\r\n    print 'Nope'\r\n```\r\n\r\n### Best practice\r\n\r\nIndent the docstring by four spaces.\r\n\r\n```python\r\ndef print_list(my_list):\r\n    \"\"\"This should be indented\"\"\"\r\n    print 'Nope'\r\n```",
+            "message": "expected an indented block",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 3
+    },
+    {
+        "fields": {
+            "code": "E113",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A line is indented when it shouldn't be. Usually this will mean that multiple lines need to be indented at the same level.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, the two `print` statements do not have matching indentation.\r\n\r\n```python\r\ndef hello_world():\r\n  print 'hello'\r\n    print 'world'\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef hello_world():\r\n    print 'hello'\r\n    print 'world'\r\n```",
+            "message": "unexpected indentation",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 4
+    },
+    {
+        "fields": {
+            "code": "E114",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "Comment indentation should be a multiple of four.\r\n\r\n### Anti-pattern\r\n\r\nIn the following example, the comment is indented with 5 spaces.\r\n\r\n```python\r\n     # 'httpd/unix-directory'\r\nmimetype = 'application/x-directory'\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\n    # 'httpd/unix-directory'\r\nmimetype = 'application/x-directory'\r\n```",
+            "message": "indentation is not a multiple of four (comment)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 5
+    },
+    {
+        "fields": {
+            "code": "E115",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "An indented block comment was expected but a non-indented block comment was found instead.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef start(self):\r\n    if True:\r\n#       try:\r\n#           self.master.start()\r\n#       except MasterExit:\r\n#           self.shutdown()\r\n#       finally:\r\n#           sys.exit()\r\n        self.master.start()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef start(self):\r\n    if True:\r\n        #  try:\r\n        #      self.master.start()\r\n        #  except MasterExit:\r\n        #      self.shutdown()\r\n        #  finally:\r\n        #      sys.exit()\r\n        self.master.start()\r\n```",
+            "message": "expected an indented block (comment)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 6
+    },
+    {
+        "fields": {
+            "code": "E116",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "Comments should be indented relative to the code in the block they are in.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n    # 'httpd/unix-directory'\r\nmimetype = 'application/x-directory'\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\n# 'httpd/unix-directory'\r\nmimetype = 'application/x-directory'\r\n```",
+            "message": "unexpected indentation (comment)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 7
+    },
+    {
+        "fields": {
+            "code": "E121",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A line is less indented than it should be for hanging indents.\r\n\r\n### Anti-pattern\r\n\r\nIn the first example, the keys of this `dict` are only indented with 3 spaces. They should be indented with 4 spaces.\r\n\r\n```python\r\nresult = {\r\n   'key1': 'value',\r\n   'key2': 'value',\r\n}\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nresult = {\r\n    'key1': 'value',\r\n    'key2': 'value',\r\n}\r\n```\r\n\r\n### Anti-pattern\r\n\r\nIn this example, the second line is only indented with 2 spaces. It should be indented with 4 spaces.\r\n\r\n```python\r\nprint \"Python\", (\r\n  \"Rules\")\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint \"Python\", (\r\n    \"Rules\")\r\n```",
+            "message": "continuation line under-indented for hanging indent",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 8
+    },
+    {
+        "fields": {
+            "code": "E122",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A continuation line is not indented as far as it should be or is indented too far.\r\n\r\n### Anti-pattern\r\n\r\nIn this example the second line is missing indentation.\r\n\r\n```python\r\nprint \"Python\", (\r\n\"Rules\")\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint \"Python\", (\r\n    \"Rules\")\r\n```",
+            "message": "continuation line missing indentation or outdented",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 9
+    },
+    {
+        "fields": {
+            "code": "E123",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "Closing brackets should match the same indentation level of the line that their opening bracket started on.\r\n\r\n### Anti-pattern\r\n\r\nIn this example the last line should be indented at the same level as the first line.\r\n\r\n```python\r\nresult = function_that_takes_arguments(\r\n    'a', 'b', 'c',\r\n    'd', 'e', 'f',\r\n    )\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nresult = function_that_takes_arguments(\r\n    'a', 'b', 'c',\r\n    'd', 'e', 'f',\r\n)\r\n```",
+            "message": "closing bracket does not match indentation of opening bracket's line",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 10
+    },
+    {
+        "fields": {
+            "code": "E124",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "Closing brackets should match the indentation of the opening bracket.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nresult = function_that_takes_arguments('a', 'b', 'c',\r\n                                       'd', 'e', 'f',\r\n)\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nresult = function_that_takes_arguments('a', 'b', 'c',\r\n                                       'd', 'e', 'f',\r\n                                       )\r\n```",
+            "message": "closing bracket does not match visual indentation",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 11
+    },
+    {
+        "fields": {
+            "code": "E125",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "Continuation lines should not be indented at the same level as the next logical line. Instead, they should be indented to one more level so as to distinguish them from the next line.\r\n\r\n### Anti-pattern\r\n\r\nIn this example the second line is indented at the same level as the line below it. This makes it difficult to tell what is in the `if` block and what is a part of the boolean expression.\r\n\r\n```python\r\nif user is not None and user.is_admin or \\\r\n    user.name == 'Grant':\r\n    blah = 'yeahnah'\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif user is not None and user.is_admin or \\\r\n        user.name == 'Grant':\r\n    blah = 'yeahnah'\r\n```",
+            "message": "continuation line with same indent as next logical line",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 12
+    },
+    {
+        "fields": {
+            "code": "E126",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A continuation line is indented farther than it should be for a hanging indent.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nprint \"Python\", (\r\n        \"Rules\")\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint \"Python\", (\r\n    \"Rules\")\r\n```",
+            "message": "continuation line over-indented for hanging indent",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 13
+    },
+    {
+        "fields": {
+            "code": "E127",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A continuation line is indented farther than it should be for a visual indent.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, the string `\"World\"` is indented two spaces farther than it should be.\r\n\r\n```python\r\nprint \"Python\", (\"Hello\",\r\n                   \"World\")\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint \"Python\", (\"Hello\",\r\n                 \"World\")\r\n```",
+            "message": "continuation line over-indented for visual indent",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 14
+    },
+    {
+        "fields": {
+            "code": "E128",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A continuation line is under-indented for a visual indentation.\r\n\r\n### Anti-pattern\r\n\r\nIn this example the string `\"World\"` is under-indented by two spaces.\r\n\r\n```python\r\nprint \"Python\", (\"Hello\",\r\n               \"World\")\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint \"Python\", (\"Hello\",\r\n                 \"World\")\r\n```",
+            "message": "continuation line under-indented for visual indent",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 15
+    },
+    {
+        "fields": {
+            "code": "E129",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A visual indented line has the same indentation as the next logical line. This can make it hard to read.\r\n\r\n### Anti-pattern\r\n\r\nIn this example the second line is indented at the same level as the body of the `if` statement.\r\n\r\n```python\r\nif (row < 0 or module_count <= row or\r\n    col < 0 or module_count <= col):\r\n    raise Exception(\"%s,%s - %s\" % (row, col, self.moduleCount))\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif (row < 0 or module_count <= row or\r\n        col < 0 or module_count <= col):\r\n    raise Exception(\"%s,%s - %s\" % (row, col, self.moduleCount))\r\n```",
+            "message": "visually indented line with same indent as next logical line",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 16
+    },
+    {
+        "fields": {
+            "code": "E131",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A continuation line is unaligned for hanging indent.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nmy_dict = {\r\n    \"key\": \"value\",\r\n    \"long\": \"the quick brown fox jumps over the \"\r\n        \"lazy dog\",\r\n}\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nmy_dict = {\r\n    \"key\": \"value\",\r\n    \"long\": \"the quick brown fox jumps over the \"\r\n            \"lazy dog\",\r\n}\r\n```",
+            "message": "continuation line unaligned for hanging indent",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 17
+    },
+    {
+        "fields": {
+            "code": "E133",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#indentation",
+            "explanation": "A closing bracket is missing indentation. This error only occurs if the `--hang-closing` flag is used, switching the default behavior of closing brackets so that they require hanging indents.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** This is not an anti-pattern by default. This only occurs if the `--hang-closing` flag is used.\r\n\r\n```python\r\nmy_list = [\r\n    1, 2, 3,\r\n    4, 5, 6,\r\n]\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nmy_list = [\r\n    1, 2, 3,\r\n    4, 5, 6,\r\n    ]\r\n```",
+            "message": "closing bracket is missing indentation",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 18
+    },
+    {
+        "fields": {
+            "code": "E201",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "Open parentheses should not have any space before or after them.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n# The space after open is unnecessary\r\nwith open( 'file.dat') as f:\r\n    contents = f.read()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nwith open('file.dat') as f:\r\n    contents = f.read()\r\n```",
+            "message": "whitespace after '('",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 19
+    },
+    {
+        "fields": {
+            "code": "E202",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "Closing parentheses should not have any before after them.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nwith open('file.dat' ) as f:\r\n    contents = f.read()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nwith open('file.dat') as f:\r\n    contents = f.read()\r\n```",
+            "message": "whitespace before ')'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 20
+    },
+    {
+        "fields": {
+            "code": "E203",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "Colons should not have any space before them.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nwith open('file.dat') as f :\r\n    contents = f.read()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nwith open('file.dat') as f:\r\n    contents = f.read()\r\n```",
+            "message": "whitespace before ':'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 21
+    },
+    {
+        "fields": {
+            "code": "E211",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "Open parentheses should not have any space before or after them.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n# The space after open is unnecessary\r\nwith open ('file.dat') as f:\r\n    contents = f.read()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nwith open('file.dat') as f:\r\n    contents = f.read()\r\n```",
+            "message": "whitespace before '('",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 22
+    },
+    {
+        "fields": {
+            "code": "E221",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be only one space before an operator.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n# There are two spaces before the multiplication operator\r\nnum = 10\r\ndoubled = num  * 2\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nnum = 10\r\ndoubled = num * 2\r\n```",
+            "message": "multiple spaces before operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 23
+    },
+    {
+        "fields": {
+            "code": "E222",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be only one space after an operator.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n# There are two spaces after the multiplication operator\r\nnum = 10\r\ndoubled = num *  2\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nnum = 10\r\ndoubled = num * 2\r\n```",
+            "message": "multiple spaces after operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 24
+    },
+    {
+        "fields": {
+            "code": "E223",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be only one space before or after operators.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** The `→` character represents a tab.\r\n\r\n```python\r\nif x→in [1, 2, 3]:\r\n    print x\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif x in [1, 2, 3]:\r\n    print x\r\n```",
+            "message": "tab before operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 25
+    },
+    {
+        "fields": {
+            "code": "E224",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be only one space before or after operators.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** The `→` character represents a tab.\r\n\r\n```python\r\nif x in→[1, 2, 3]:\r\n    print x\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif x in [1, 2, 3]:\r\n    print x\r\n```",
+            "message": "tab after operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 26
+    },
+    {
+        "fields": {
+            "code": "E225",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be one space before and after all operators.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nif age>15:\r\n    print 'Can drive'\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif age > 15:\r\n    print 'Can drive'\r\n```",
+            "message": "missing whitespace around operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 27
+    },
+    {
+        "fields": {
+            "code": "E226",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be one space before and after an arithmetic operator (`+`, `-`, `/`, and `*`).\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nage = 10+15\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nage = 10 + 15\r\n```",
+            "message": "missing whitespace around arithmetic operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 28
+    },
+    {
+        "fields": {
+            "code": "E227",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be one space before and after bitwise and shift operators (`<<`, `>>`, `&`, `|`, `^`).\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nx = 128<<1\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nx = 128 << 1\r\n```",
+            "message": "missing whitespace around bitwise or shift operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 29
+    },
+    {
+        "fields": {
+            "code": "E228",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "The modulo operator (`%`) should have whitespace on either side of it.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nremainder = 10%2\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nremainder = 10 % 2\r\n```",
+            "message": "missing whitespace around modulo operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 30
+    },
+    {
+        "fields": {
+            "code": "E231",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be whitespace after the characters `,`, `;`, and `:`.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nmy_tuple = 1,2,3\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nmy_tuple = 1, 2, 3\r\n```",
+            "message": "missing whitespace after ',', ';', or ':'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 31
+    },
+    {
+        "fields": {
+            "code": "E241",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be only one space after the  `,` character.\r\n\r\n### Anti-pattern\r\n\r\nIn this example there are two spaces after the comma\r\n\r\n```python\r\nmy_tuple = 1,  2\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nmy_tuple = 1, 2\r\n```",
+            "message": "multiple spaces after ','",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 32
+    },
+    {
+        "fields": {
+            "code": "E242",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#pet-peeves",
+            "explanation": "There should be only one space after the `,` character.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** The `→` character represents a tab.\r\n\r\n```python\r\nmy_tuple = 1,→2,→3\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nmy_tuple = 1, 2, 3\r\n```",
+            "message": "tab after ','",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 33
+    },
+    {
+        "fields": {
+            "code": "E251",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#other-recommendations",
+            "explanation": "There should be no spaces before or after the `=` in a function definition.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef func(key1 = 'val1',\r\n         key2 = 'val2'):\r\n    return key1, key2\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef func(key1='val1',\r\n         key2='val2'):\r\n    return key1, key2\r\n```",
+            "message": "unexpected spaces around keyword / parameter equals",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 34
+    },
+    {
+        "fields": {
+            "code": "E261",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#inline-comments",
+            "explanation": "Inline comments should have two spaces before them. Often programmers will only include one space, which will trigger this warning.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef print_name(self):\r\n    print self.name # This comment needs an extra space\r\n```\r\n\r\n### Best practice\r\n\r\n\r\n```python\r\ndef print_name(self):\r\n    print self.name  # Comment is correct now\r\n```",
+            "message": "at least two spaces before inline comment",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 35
+    },
+    {
+        "fields": {
+            "code": "E262",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#inline-comments",
+            "explanation": "Inline comments should have one space before the pound sign (`#`) and the comment itself.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef print_name(self):\r\n    print self.name  #This comment needs a space\r\n```\r\n\r\n### Best practice\r\n\r\n\r\n```python\r\ndef print_name(self):\r\n    print self.name  # Comment is correct now\r\n```",
+            "message": "inline comment should start with '# '",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 36
+    },
+    {
+        "fields": {
+            "code": "E265",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#block-comments",
+            "explanation": "Block comments should have one space before the pound sign (`#`) and the comment itself.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n#This comment needs a space\r\ndef print_name(self):\r\n    print self.name\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\n# Comment is correct now\r\ndef print_name(self):\r\n    print self.name\r\n```",
+            "message": "block comment should start with '# '",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 37
+    },
+    {
+        "fields": {
+            "code": "E266",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#block-comments",
+            "explanation": "There should be only one leading `#` for a block comment.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\n## Prints hello\r\nprint 'hello'\r\n```\r\n\r\n### Best practice\r\n\r\nOnly use one `#`.\r\n\r\n```python\r\n# Prints hello\r\nprint 'hello'\r\n```",
+            "message": "too many leading '#' for block comment",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 38
+    },
+    {
+        "fields": {
+            "code": "E271",
+            "documentation": "",
+            "explanation": "There should be only one space after a keyword.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef  func():\r\n    pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef func():\r\n    pass\r\n```",
+            "message": "multiple spaces after keyword",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 39
+    },
+    {
+        "fields": {
+            "code": "E272",
+            "documentation": "",
+            "explanation": "There should be only one space before a keyword.\r\n\r\n### Anti-pattern\r\n\r\nIn this example there are two spaces before the `in` keyword.\r\n\r\n```python\r\ndef func():\r\n    if 1  in [1, 2, 3]:\r\n        print 'yep!'\r\n```\r\n\r\n### Best practice\r\n```python\r\ndef func():\r\n    if 1 in [1, 2, 3]:\r\n        print 'yep!'\r\n```",
+            "message": "multiple spaces before keyword",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 40
+    },
+    {
+        "fields": {
+            "code": "E273",
+            "documentation": "",
+            "explanation": "There should be only one space after a keyword.\r\n\r\n**Note:** The `→` character represents a tab.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef→func():\r\n    pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef func():\r\n    pass\r\n```",
+            "message": "tab after keyword",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 41
+    },
+    {
+        "fields": {
+            "code": "E274",
+            "documentation": "",
+            "explanation": "There should be only one space before a keyword.\r\n\r\n### Anti-pattern\r\n\r\nIn this example there is a tab before the `in` keyword.\r\n\r\n**Note:** The `→` character represents a tab.\r\n\r\n```python\r\ndef func():\r\n    if 1→in [1, 2, 3]:\r\n        print 'yep!'\r\n```\r\n\r\n### Best practice\r\n\r\nUse only one space before the `in` operator.\r\n\r\n```python\r\ndef func():\r\n    if 1 in [1, 2, 3]:\r\n        print 'yep!'\r\n```",
+            "message": "tab before keyword",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 42
+    },
+    {
+        "fields": {
+            "code": "E275",
+            "documentation": "",
+            "explanation": "There should be one space after keywords.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nfrom collections import(namedtuple, defaultdict)\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nfrom collections import (namedtuple, defaultdict)\r\n```",
+            "message": "missing whitespace after keyword",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 43
+    },
+    {
+        "fields": {
+            "code": "E301",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#blank-lines",
+            "explanation": "One blank line is expected between the methods of a class.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nclass MyClass(object):\r\n    def func1():\r\n        pass\r\n    def func2():\r\n        pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nclass MyClass(object):\r\n    def func1():\r\n        pass\r\n\r\n    def func2():\r\n        pass\r\n```",
+            "message": "expected 1 blank line, found 0",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 44
+    },
+    {
+        "fields": {
+            "code": "E302",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#blank-lines",
+            "explanation": "Two blank lines are expected between functions and classes.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef func1():\r\n    pass\r\ndef func2():\r\n    pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef func1():\r\n    pass\r\n\r\n\r\ndef func2():\r\n    pass\r\n```",
+            "message": "expected 2 blank lines, found 0",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 45
+    },
+    {
+        "fields": {
+            "code": "E303",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#blank-lines",
+            "explanation": "Two blank lines are expected between functions and classes and one blank line is expected between methods of a class.\r\n\r\n### Anti-pattern\r\n\r\nThis example has too many blank lines.\r\n\r\n```python\r\ndef func1():\r\n    pass\r\n\r\n\r\n\r\ndef func2():\r\n    pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef func1():\r\n    pass\r\n\r\n\r\ndef func2():\r\n    pass\r\n```",
+            "message": "too many blank lines (3)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 46
+    },
+    {
+        "fields": {
+            "code": "E304",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#blank-lines",
+            "explanation": "There should be no blank lines between a function decorator and the function it is decorating.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, the `property` decorator has a space between it and the `name` method. The space should be removed.\r\n\r\n```python\r\nclass User(object):\r\n\r\n    @property\r\n\r\n    def name(self):\r\n        pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nclass User(object):\r\n\r\n    @property\r\n    def name(self):\r\n        pass\r\n```",
+            "message": "blank lines found after function decorator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 47
+    },
+    {
+        "fields": {
+            "code": "E305",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#blank-lines",
+            "explanation": "Functions and classes should have two blank lines after them, separating them from other functions and classes.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nclass User(object):\r\n    pass\r\nuser = User()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nclass User(object):\r\n    pass\r\n\r\n\r\nuser = User()\r\n```",
+            "message": "expected 2 blank lines after end of function or class",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 48
+    },
+    {
+        "fields": {
+            "code": "E401",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#imports",
+            "explanation": "Imports from different modules should occur on different lines.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nimport collections, os, sys\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nimport collections\r\nimport os\r\nimport sys\r\n```",
+            "message": "multiple imports on one line",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 49
+    },
+    {
+        "fields": {
+            "code": "E402",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#imports",
+            "explanation": "All module level imports should be at the top of the file. This means that there should be no statements in between module level imports.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, the `sys` import is not at the top of the file because `local.setlocale` occurs before it.\r\n\r\n```python\r\nimport locale\r\n\r\nlocale.setlocale(locale.LC_ALL, 'en_US.UTF-8')\r\n\r\nimport sys\r\n```\r\n\r\n### Best practice\r\n\r\nChange the code so that the method call occurs after the imports.\r\n\r\n```python\r\nimport locale\r\nimport sys\r\n\r\nlocale.setlocale(locale.LC_ALL, 'en_US.UTF-8')\r\n```",
+            "message": "module level import not at top of file",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 50
+    },
+    {
+        "fields": {
+            "code": "E501",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#maximum-line-length",
+            "explanation": "Perhaps the most controversial PEP8 rule, line lengths are recommended to be no greater than 79 characters. The reasoning for this comes straight from PEP8 itself:\r\n\r\n> Limiting the required editor window width makes it possible to have several files open side-by-side, and works well when using code review tools that present the two versions in adjacent columns.\r\n\r\nIt is fairly common for developers, especially those in closed-source projects, to change the maximum line length to 100 or 120 characters.",
+            "message": "line too long (82 &gt; 79 characters)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 51
+    },
+    {
+        "fields": {
+            "code": "E502",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#maximum-line-length",
+            "explanation": "There is no need for backslashes between brackets.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nprint('Four score and seven years ago our fathers brought '\\\r\n      'forth, upon this continent, a new nation, conceived '\\\r\n      'in liberty, and dedicated to the proposition that '\\\r\n      '\"all men are created equal.\"')\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint('Four score and seven years ago our fathers brought '\r\n      'forth, upon this continent, a new nation, conceived '\r\n      'in liberty, and dedicated to the proposition that '\r\n      '\"all men are created equal.\"')\r\n```",
+            "message": "the backslash is redundant between brackets",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 52
+    },
+    {
+        "fields": {
+            "code": "E701",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#other-recommendations",
+            "explanation": "Multiple statements should be on their own separate lines. This improves readability.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nif x > 5: y = 10\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif x > 5:\r\n    y = 10\r\n```",
+            "message": "multiple statements on one line (colon)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 53
+    },
+    {
+        "fields": {
+            "code": "E702",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#other-recommendations",
+            "explanation": "Multiple statements should not be on the same line separated by a semicolon. They should be on their own separate lines \r\n\r\n### Anti-pattern\r\n\r\n```python\r\nfrom gevent import monkey; monkey.patch_all()\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nfrom gevent import monkey\r\nmonkey.patch_all()\r\n```",
+            "message": "multiple statements on one line (semicolon)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 54
+    },
+    {
+        "fields": {
+            "code": "E703",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#other-recommendations",
+            "explanation": "Unlike programming languages like Java and C#, statements in Python do not need to end with a semicolon. They can be removed.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nprint 'Hello world!';\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nprint 'Hello world!'\r\n```",
+            "message": "statement ends with a semicolon",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 55
+    },
+    {
+        "fields": {
+            "code": "E704",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#other-recommendations",
+            "explanation": "Multiple statements of a function definition should be on their own separate lines.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef f(): pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef f():\r\n    pass\r\n```",
+            "message": "multiple statements on one line (def)",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 56
+    },
+    {
+        "fields": {
+            "code": "E711",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#programming-recommendations",
+            "explanation": "## comparison to None should be 'if cond is None:'\r\n\r\n```\r\nHello world!\r\n```",
+            "message": "comparison to None should be 'if cond is None:'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 57
+    },
+    {
+        "fields": {
+            "code": "E712",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#programming-recommendations",
+            "explanation": "When comparing a variable to `True`, you should use the form `if x is True` or simply `if x`. The most common incorrect form is `if x == True`.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nx = True\r\nif x == True:\r\n    print 'True!'\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nx = True\r\nif x is True:\r\n    print 'True!'\r\n```\r\n\r\nor simply:\r\n\r\n```python\r\nx = True\r\nif x:\r\n    print 'True!'\r\n```",
+            "message": "comparison to True should be 'if cond is True:' or 'if cond:'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 58
+    },
+    {
+        "fields": {
+            "code": "E713",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#programming-recommendations",
+            "explanation": "Tests for membership should use the form `x not in the_list` rather than `not x in the_list`. The former example is simply more readable.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nmy_list = [1, 2, 3]\r\nif not num in my_list:\r\n    print num\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nmy_list = [1, 2, 3]\r\nif num not in my_list:\r\n    print num\r\n```",
+            "message": "test for membership should be 'not in'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 59
+    },
+    {
+        "fields": {
+            "code": "E714",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#programming-recommendations",
+            "explanation": "Tests for object identity should use the form `x is not None` rather than `not x is None`. The former example is simply more readable.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nif not user is None:\r\n    print user.name\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif user is not None:\r\n    print user.name\r\n```",
+            "message": "test for object identity should be 'is not'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 60
+    },
+    {
+        "fields": {
+            "code": "E721",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#programming-recommendations",
+            "explanation": "A object should be be compared to a type by using `isinstance`. This is because `isinstance` can handle subclasses as well.\r\n\r\n### Anti-pattern\r\n\r\nThe below example will not handle a potential future case where `user` is a subclass or `User`.\r\n\r\n```python\r\nif type(user) == User:\r\n    print user.name\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nif isinstance(user, User):\r\n    print user.name\r\n```",
+            "message": "do not compare types, use 'isinstance()'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 61
+    },
+    {
+        "fields": {
+            "code": "E731",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#programming-recommendations",
+            "explanation": "Lambdas should not be assigned to a variable. Instead, they should be defined as functions.\r\n\r\nThe primary reason for this is debugging. Lambdas show as `<lambda>` in tracebacks, where functions will display the function's name.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nroot = lambda folder_name: os.path.join(BASE_DIR, folder_name)\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef root(folder_name):\r\n    return os.path.join(BASE_DIR, folder_name)\r\n```",
+            "message": "do not assign a lambda expression, use a def",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 62
+    },
+    {
+        "fields": {
+            "code": "E741",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#names-to-avoid",
+            "explanation": "Variables named `I`, `O`, and `l` can be very hard to read. This is because the letter `I` and the letter `l` are easily confused, and the letter `O` and the number `0` can be easily confused.\r\n\r\nChange the names of these variables to something more descriptive.",
+            "message": "do not use variables named 'l', 'O', or 'I'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 63
+    },
+    {
+        "fields": {
+            "code": "E742",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#names-to-avoid",
+            "explanation": "Classes named `I`, `O`, and `l` can be very hard to read. This is because the letter `I` and the letter `l` are easily confused, and the letter `O` and the number `0` can be easily confused.\r\n\r\nChange the names of these classes to something more descriptive.",
+            "message": "do not define classes named 'l', 'O', or 'I'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 64
+    },
+    {
+        "fields": {
+            "code": "E743",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#names-to-avoid",
+            "explanation": "Functions named `I`, `O`, and `l` can be very hard to read. This is because the letter `I` and the letter `l` are easily confused, and the letter `O` and the number `0` can be easily confused.\r\n\r\nChange the names of these functions to something more descriptive.",
+            "message": "do not define functions named 'l', 'O', or 'I'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 65
+    },
+    {
+        "fields": {
+            "code": "W191",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces",
+            "explanation": "Indentation has tabs when only spaces are expected. Change all tabs to spaces.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** `→` represents a tab.\r\n\r\n```python\r\ndef get_name(self):\r\n    if self.first_name and self.last_name:\r\n    → → return self.first_name + ' ' + self.last_name\r\n    else:\r\n        return self.last_name\r\n```\r\n\r\n### Best practice\r\n\r\nUse spaces only.\r\n\r\n```python\r\ndef get_name(self):\r\n    if self.first_name and self.last_name:\r\n        return self.first_name + ' ' + self.last_name\r\n    else:\r\n        return self.last_name\r\n```",
+            "message": "indentation contains tabs",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 66
+    },
+    {
+        "fields": {
+            "code": "W291",
+            "documentation": "",
+            "explanation": "There should be no whitespace after the final character in a line.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** The `•` character represents a space.\r\n\r\n```python\r\ndef first_func():\r\n    # The line below has two spaces after its final character\r\n    pass••\r\n```",
+            "message": "trailing whitespace",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 67
+    },
+    {
+        "fields": {
+            "code": "W292",
+            "documentation": "",
+            "explanation": "Files should end with a newline.\r\n\r\n### Anti-pattern\r\n\r\nImagine the example below is an entire file.\r\n\r\n```python\r\nimport os\r\n\r\nBASE_DIR = os.path.dirname(os.path.abspath(__file__))\r\n```\r\n\r\n### Best practice\r\n\r\nImagine the example below is an entire file.\r\n\r\n```python\r\nimport os\r\n\r\nBASE_DIR = os.path.dirname(os.path.abspath(__file__))\r\n\r\n```",
+            "message": "no newline at end of file",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 68
+    },
+    {
+        "fields": {
+            "code": "W293",
+            "documentation": "",
+            "explanation": "Blank lines should not contain any tabs or spaces.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** The `•` character represents a space.\r\n\r\n```python\r\ndef first_func():\r\n    pass\r\n••••  # This line contains four spaces\r\n\r\ndef second_func():\r\n    pass\r\n```\r\n\r\n\r\n### Best practice\r\n\r\n```python\r\ndef first_func():\r\n    pass\r\n\r\n\r\ndef second_func():\r\n    pass\r\n```",
+            "message": "blank line contains whitespace",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 69
+    },
+    {
+        "fields": {
+            "code": "W391",
+            "documentation": "",
+            "explanation": "There should be one, and only one, blank line at the end of each file. This warning will occur when there are two or more blank lines.\r\n\r\n### Anti-pattern\r\n\r\nImagine the example below is an entire file.\r\n\r\n```python\r\nclass MyClass(object):\r\n    pass\r\n\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nclass MyClass(object):\r\n    pass\r\n\r\n\r\n\r\n```",
+            "message": "blank line at end of file",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 70
+    },
+    {
+        "fields": {
+            "code": "W503",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#should-a-line-break-before-or-after-a-binary-operator",
+            "explanation": "Line breaks should occur after the binary operator to keep all variable names aligned.\r\n\r\nThis rule goes against the PEP 8 recommended style, which was changed on April 16th, 2016 in [this commit](https://github.com/python/peps/commit/c59c4376ad233a62ca4b3a6060c81368bd21e85b). The tool [will soon be updated](https://github.com/PyCQA/pycodestyle/pull/502) to recommend the opposite: line breaks *should* occur before the binary operator because it keeps all operators aligned.\r\n\r\n### Anti-pattern\r\n\r\n**Note:** Despite being in the anti-pattern section, this will soon be considered the best practice.\r\n\r\n```python\r\nincome = (gross_wages\r\n          + taxable_interest)\r\n```\r\n\r\n### Best practice\r\n\r\n**Note:** Despite being in the best practice section, this will soon be considered an anti-pattern.\r\n\r\n```python\r\nincome = (gross_wages +\r\n          taxable_interest)\r\n```",
+            "message": "line break occurred before a binary operator",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 71
+    },
+    {
+        "fields": {
+            "code": "W601",
+            "documentation": "https://docs.python.org/2/library/stdtypes.html#dict.has_key",
+            "explanation": "`.has_key()` was deprecated in Python 2. It is recommended to use the `in` operator instead.\r\n\r\n### Example\r\n\r\n```python\r\nmy_dict = {'hello': 'world'}\r\nif 'hello' in my_dict:\r\n    print 'It works!'\r\n```",
+            "message": ".has_key() is deprecated, use 'in'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 72
+    },
+    {
+        "fields": {
+            "code": "W602",
+            "documentation": "",
+            "explanation": "The `raise Exception, message` form of raising exceptions is deprecated. Use the new form.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef can_drive(age):\r\n    if age < 16:\r\n        raise ValueError, 'Not old enough to drive'\r\n    return True\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef can_drive(age):\r\n    if age < 16:\r\n        raise ValueError('Not old enough to drive')\r\n    return True\r\n```",
+            "message": "deprecated form of raising exception",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 73
+    },
+    {
+        "fields": {
+            "code": "W603",
+            "documentation": "https://docs.python.org/2/library/stdtypes.html#index-9",
+            "explanation": "`<>` has been deprecated and removed in Python 3. Replace instances of `<>` with `!=`.\r\n\r\n### Example\r\n\r\n```python\r\nassert 'test' != 'testing'\r\n```",
+            "message": "'<>' is deprecated, use '!='",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 74
+    },
+    {
+        "fields": {
+            "code": "W604",
+            "documentation": "https://docs.python.org/3.0/whatsnew/3.0.html#removed-syntax",
+            "explanation": "Backticks were deprecated and removed in Python 3. Use the built-in function `repr()` instead.\r\n\r\n### Example\r\n\r\n```python\r\nobj = MyObj()\r\nprint repr(obj)\r\n```",
+            "message": "backticks are deprecated, use 'repr()'",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 75
+    },
+    {
+        "fields": {
+            "code": "F401",
+            "documentation": "",
+            "explanation": "A module has been imported but is not used anywhere in the file. The module should either be used or the import should be removed.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, it is likely that `namedtuple` was going to be used instead of a regular `tuple`. However, `namedtuple` was never used. It should be removed.\r\n\r\n```python\r\nfrom collections import namedtuple\r\n\r\nmy_tuple = ('Grant', 'McConnaughey', 25)\r\n```\r\n\r\n### Best practice\r\n\r\n\r\n```python\r\nmy_tuple = ('Grant', 'McConnaughey', 25)\r\n```",
+            "message": "module imported but unused",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 76
+    },
+    {
+        "fields": {
+            "code": "F402",
+            "documentation": "",
+            "explanation": "Loop variables should not redefine the name of modules that are imported.\r\n\r\n### Anti-pattern\r\n\r\nIn this example the `path` loop variable redefines the `path` module that is imported from `os`. The name of the loop variable should be changed.\r\n\r\n```python\r\nfrom os import path\r\n\r\nfor path in ['file1.py', 'file2.py']:\r\n    print path\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nfrom os import path\r\n\r\nfor file_name in ['file1.py', 'file2.py']:\r\n    print file_name\r\n```",
+            "message": "import module from line N shadowed by loop variable",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 77
+    },
+    {
+        "fields": {
+            "code": "F403",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#imports",
+            "explanation": "`from module import *` is discouraged because the programmer often won't know where an imported object is defined. The imported module, class, or function should be explicitly defined.\r\n\r\n### Anti-pattern\r\n\r\nIn the following example, it is unclear whether the `User` class is defined in the `users.models` module or the `auth.models` module.\r\n\r\n```python\r\nfrom users.models import *\r\nfrom auth.models import *\r\n\r\nuser = User.objects.get(name='Grant')\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nfrom users.models import User\r\nfrom auth.models import check_password\r\n\r\nuser = User.objects.get(name='Grant')\r\ncheck_password(user.username, 'password')\r\n```",
+            "message": "'from module import *' used; unable to detect undefined names",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 78
+    },
+    {
+        "fields": {
+            "code": "F404",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#module-level-dunder-names",
+            "explanation": "Imports from `__future__` should be the first imports in a file.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, `namedtuple` is imported before `__future__.print_function`.\r\n\r\n```python\r\nfrom collections import namedtuple\r\n\r\nfrom __future__ import print_function\r\n```\r\n\r\n### Best practice\r\n\r\nTo fix the issue we switch the order of the imports so that all `__future__` imports come first.\r\n\r\n```python\r\nfrom __future__ import print_function\r\n\r\nfrom collections import namedtuple\r\n```",
+            "message": "future import(s) name after other statements",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 79
+    },
+    {
+        "fields": {
+            "code": "F405",
+            "documentation": "https://www.python.org/dev/peps/pep-0008/#imports",
+            "explanation": "This warning occurs in conjunction with issue F403, `'from module import *' used`. It means that the variable `name` *could* be undefined, but flake8 cannot be sure because it also *could* also be imported in the star imports.\r\n\r\nConfirm that the variable is defined in the star imports. If it is, explicitly import it instead of importing `*`. If not, then define the variable.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nfrom mymodule import *\r\n\r\ndef print_name():\r\n    print name  # name could be defined in mymodule\r\n```\r\n\r\n### Best practice\r\n\r\nEither explicitly import `name`...\r\n\r\n```python\r\nfrom mymodule import name\r\n\r\ndef print_name():\r\n    print name\r\n```\r\n\r\n...or define `name`.\r\n\r\n```python\r\nfrom mymodule import *\r\n\r\ndef print_name(name):\r\n    print name\r\n```",
+            "message": "name may be undefined, or defined from star imports: module",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 80
+    },
+    {
+        "fields": {
+            "code": "F811",
+            "documentation": "",
+            "explanation": "A module has been imported twice, and the original import is unused. One of the imports should be removed and you should ensure that it is being used in the file.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, we import `json`, then two lines down we import `json` again.\r\n\r\n```python\r\nimport json\r\nimport os\r\nimport json\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\nimport json\r\nimport os\r\n```",
+            "message": "redefinition of unused name from line N",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 81
+    },
+    {
+        "fields": {
+            "code": "F812",
+            "documentation": "https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions",
+            "explanation": "A list comprehension is using the same name as another variable defined in the module. Either change the variable name in the list comprehension or change it in the module.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, the variable `i` is defined as 1 then reused in the list comprehension.\r\n\r\n```python\r\ni = 1\r\nsquares = [i ** 2 for i in range(10)]\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ni = 1\r\nsquares = [num ** 2 for num in range(10)]\r\n```",
+            "message": "list comprehension redefines name from line N",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 82
+    },
+    {
+        "fields": {
+            "code": "F821",
+            "documentation": "",
+            "explanation": "The variable `name` is not defined where it is used. Define it.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef get_name():\r\n    # self is undefined\r\n    return self.name\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef get_name(self):\r\n    return self.name\r\n```",
+            "message": "undefined name name",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 83
+    },
+    {
+        "fields": {
+            "code": "F822",
+            "documentation": "https://docs.python.org/3/tutorial/modules.html#importing-from-a-package",
+            "explanation": "An undefined module was specified in the `__all__` list. Ensure that it is specified in your file or remove the variable from `__all__`.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\nfrom foo import bar\r\n\r\n__all__ = ['bar', 'baz']  # baz is undefined\r\n```",
+            "message": "undefined name name in __all__",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 84
+    },
+    {
+        "fields": {
+            "code": "F823",
+            "documentation": "",
+            "explanation": "Local variables should be defined before the are referenced.\r\n\r\n### Anti-pattern\r\n\r\nIn this example, `func` attempts to increment `my_var` while also defining a new local variable called `my_var`. It is not referencing the `my_var` variable from the global namespace.\r\n\r\n```python\r\nmy_var = 0\r\n\r\ndef func():\r\n    my_var += 1\r\n```\r\n\r\n### Best practice\r\n\r\nIn this example, we use the `global` statement to indicate that the function `func` should work on the variable `my_var` from the global namespace.\r\n\r\n```python\r\nmy_var = 0\r\n\r\ndef func():\r\n    global my_var\r\n    my_var += 1\r\n```",
+            "message": "local variable name ... referenced before assignment",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 85
+    },
+    {
+        "fields": {
+            "code": "F831",
+            "documentation": "",
+            "explanation": "Two or more parameters in a function definition have the same name. All names in the function definition should be distinct.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef format_name(first_name, last_name, first_name='Grant'):\r\n    # first_name is declared twice\r\n    pass\r\n```\r\n\r\n### Best practice\r\n\r\n```python\r\ndef format_name(first_name, last_name):\r\n    pass\r\n```",
+            "message": "duplicate argument name in function definition",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 86
+    },
+    {
+        "fields": {
+            "code": "F841",
+            "documentation": "",
+            "explanation": "A local variable in your function was defined but is not being used. This local variable should be removed.\r\n\r\n### Anti-pattern\r\n\r\n```python\r\ndef full_name(self):\r\n    # name is defined but not used\r\n    name = self.first_name + ' ' + self.last_name\r\n    return self.first_name\r\n```",
+            "message": "local variable name is assigned to but never used",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 87
+    },
+    {
+        "fields": {
+            "code": "C901",
+            "documentation": "https://en.wikipedia.org/wiki/Cyclomatic_complexity",
+            "explanation": "Functions that are deemed too complex are functions that have too much branching logic. Branching logic includes `if`/`elif`/`else` and `for`/`while` loops.\r\n\r\n### Anti-pattern\r\n\r\nThe following example has a complexity score of 5, because there are five potential branches.\r\n\r\n```python\r\ndef post_comment(self):\r\n    if self.success:\r\n        comment = 'Build succeeded'\r\n    elif self.warning:\r\n        comment = 'Build had issues'\r\n    elif self.failed:\r\n        comment = 'Build failed'\r\n\r\n    if self.success:\r\n        self.post(comment, type='success')\r\n    else:\r\n        self.post(comment, type='error')\r\n```\r\n\r\n### Best practice\r\n\r\nTo reduce the complexity of a function you should make the function do less. In the example above, the function actually does two things: formats a comment and posts the comment. Let's split that up into two specific functions that have only one task each.\r\n\r\n```python\r\ndef get_comment(self):\r\n    comments = {\r\n        'success': 'Build succeeded',\r\n        'warning': 'Build had issues',\r\n        'failed': 'Build failed'\r\n    }\r\n    return comments[self.type]\r\n\r\ndef post_comment(self, comment):\r\n    self.post(comment, type=self.type)\r\n```\r\n\r\nThese two functions now have a complexity of 1.",
+            "message": "function is too complex",
+            "tool": "flake8"
+        },
+        "model": "issues.issue",
+        "pk": 88
+    }
+]

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+
+    {% if page.links %}
+      <h3 id="additional-links">Additional links</h3>
+
+      <ul>
+        {% for link in page.links %}
+        <li><a href="{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+
+</article>
