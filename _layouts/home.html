@@ -6,46 +6,37 @@ layout: default
 
   <h1 class="page-heading">The Big Ol' List of Rules</h1>
 
-  <h2>pycodestyle</h2>
+  <h2 id="pycodestyle">pycodestyle</h2>
 
-  <table>
+  <table class="rules-table">
     <tbody>
       {% for rule in site.rules %}
         {% if rule.code contains 'E' or rule.code contains 'W' %}
-          <tr>
-            <td><a href="{{ rule.url | relative_url }}">{{ rule.code }}</a></td>
-            <td><a href="{{ rule.url | relative_url }}">{{ rule.message }}</a></td>
-          </tr>
+          {% include rule-row.html rule=rule %}
         {% endif %}
       {% endfor %}
     </tbody>
   </table>
 
-  <h2>pyflakes</h2>
+  <h2 id="pyflakes">pyflakes</h2>
 
-  <table>
+  <table class="rules-table">
     <tbody>
       {% for rule in site.rules %}
         {% if rule.code contains 'F' %}
-          <tr>
-            <td><a href="{{ rule.url | relative_url }}">{{ rule.code }}</a></td>
-            <td><a href="{{ rule.url | relative_url }}">{{ rule.message }}</a></td>
-          </tr>
+          {% include rule-row.html rule=rule %}
         {% endif %}
       {% endfor %}
     </tbody>
   </table>
 
-  <h2>mccabe</h2>
+  <h2 id="mccabe">mccabe</h2>
 
-  <table>
+  <table class="rules-table">
     <tbody>
       {% for rule in site.rules %}
         {% if rule.code contains 'C' %}
-          <tr>
-            <td><a href="{{ rule.url | relative_url }}">{{ rule.code }}</a></td>
-            <td><a href="{{ rule.url | relative_url }}">{{ rule.message }}</a></td>
-          </tr>
+          {% include rule-row.html rule=rule %}
         {% endif %}
       {% endfor %}
     </tbody>
