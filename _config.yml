@@ -18,7 +18,14 @@ plugins:
 collections:
   rules:
     output: true
+  rules_json:
+    output: true
+    permalink: /api/rules/:title/
 defaults:
+  - scope:
+      path: "_rules_json"
+    values:
+      layout: rule_json
   - scope:
       path: "_rules"
     values:

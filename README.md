@@ -4,7 +4,27 @@ Documentation and examples for the rules in [Flake8](http://flake8.pycqa.org/en/
 
 ## API
 
-Flake8 Rules includes an [API with a single endpoint](https://lintlyci.github.io/Flake8Rules/rules.json). The endpoint returns a list of all Flake8 rules.
+Flake8 Rules includes simple API with two endpoints.
+
+### Retrieve a single rule
+
+This endpoints returns a single Flake8 rule.
+
+**Heads up:** This API returns JSON content but the Content-Type is set to `text/html`. This is due to Jekyll's inability to generate files with permalinks that end in `.json`.
+
+```
+$ curl https://lintlyci.github.io/Flake8Rules/api/rules/E111/
+{
+    "code": "E111",
+    "message": "Indentation is not a multiple of four",
+    "content": "The rendered HTML content",
+    "links": ["https://www.python.org/dev/peps/pep-0008/#indentation"]
+}
+```
+
+### Retrieve a list of all rules
+
+This endpoint returns a list of all Flake8 rules.
 
 ```
 $ curl https://lintlyci.github.io/Flake8Rules/rules.json

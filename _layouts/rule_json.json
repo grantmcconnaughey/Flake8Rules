@@ -3,7 +3,7 @@ layout: null
 ---
 {
     "code": "{{ page.code }}",
-    "message": "{{ page.message }}",
-    "content": "{{ page.content | replace: '\', '\\\\' | newline_to_br | strip_newlines | escape_once }}",
+    "message": {{ page.message | jsonify }},
+    "content": {{ page.content | jsonify }},
     "links": [{% for link in page.links %}"{{ link }}"{% if forloop.last == false %},{% endif %}{% endfor %}]
 }
