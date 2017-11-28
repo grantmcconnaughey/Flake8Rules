@@ -9,7 +9,6 @@ import shutil
 RULES_DIRECTORY = '_rules'
 
 FILE_TEMPLATE = """---
-layout: rule
 code: {code}
 message: "{message}"
 title: "{message} ({code})"{links_section}

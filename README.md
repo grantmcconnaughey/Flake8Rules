@@ -4,23 +4,23 @@ Documentation and examples for the rules in [Flake8](http://flake8.pycqa.org/en/
 
 ## API
 
-Flake8 Rules includes an [API with a single endpoint](https://lintlyci.github.io/Flake8Rules/rules.json). The endpoint returns a list of all Flake8 rules.
+Flake8 Rules includes an API that returns individual rules. You can access the API at `https://lintlyci.github.io/Flake8Rules/rules/{rule code}.json`.
 
 ```
-$ curl https://lintlyci.github.io/Flake8Rules/rules.json
-[
-    {
-        "code": "F812",
-        "message": "List comprehension redefines name from line n",
-        "content": "The rendered and escaped HTML content",
-        "links": ["https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions"]
-    }
-]
+$ curl https://lintlyci.github.io/Flake8Rules/rules/E101.json
+{
+    "code": "E101",
+    "content": "The unrendered Markdown content",
+    "links": [
+        "https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces"
+    ],
+    "message": "Indentation contains mixed spaces and tabs"
+}
 ```
 
 * `code` - The 4 character Flake8 issue code.
 * `message` - A short message describing the issue.
-* `content` - The fully rendered HTML content describing the issue and how to fix it. The HTML is escaped.
+* `content` - The unrendered Markdown content describing the issue and how to fix it.
 * `links` - A list of additional links to visit for more information.
 
 ## Contributing

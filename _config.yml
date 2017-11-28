@@ -32,6 +32,12 @@ plugins:
 collections:
   rules:
     output: true
+defaults:
+  - scope:
+      path: "_rules"
+    values:
+      layout: rule
+
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
