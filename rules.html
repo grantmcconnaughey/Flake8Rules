@@ -6,8 +6,8 @@ permalink: /rules.json
 {% for rule in site.rules %}
     {
         "code": "{{ rule.code }}",
-        "message": "{{ rule.message }}",
-        "content": "{{ rule.content | replace: '\', '\\\\' | newline_to_br | strip_newlines | escape_once }}",
+        "message": {{ rule.message | jsonify }},
+        "content": {{ rule.content | jsonify }},
         "links": [{% for link in rule.links %}"{{ link }}"{% if forloop.last == false %},{% endif %}{% endfor %}]
     }{% if forloop.last == false %},{% endif %}
 {% endfor %}

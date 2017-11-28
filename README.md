@@ -12,7 +12,7 @@ $ curl https://lintlyci.github.io/Flake8Rules/rules.json
     {
         "code": "F812",
         "message": "List comprehension redefines name from line n",
-        "content": "The rendered and escaped HTML content",
+        "content": "The rendered HTML content",
         "links": ["https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions"]
     }
 ]
@@ -20,7 +20,7 @@ $ curl https://lintlyci.github.io/Flake8Rules/rules.json
 
 * `code` - The 4 character Flake8 issue code.
 * `message` - A short message describing the issue.
-* `content` - The fully rendered HTML content describing the issue and how to fix it. The HTML is escaped.
+* `content` - The fully rendered HTML content describing the issue and how to fix it.
 * `links` - A list of additional links to visit for more information.
 
 ## Contributing
