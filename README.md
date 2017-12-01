@@ -47,7 +47,7 @@ $ curl https://lintlyci.github.io/Flake8Rules/api/rules.json
 
 All rules go in the `_rules` directory. They should be named with their 4 character code, like `E301.md`.
 
-To run the jekyll development server, run the following:
+To run the jekyll development server first [install Jekyll](https://jekyllrb.com/docs/installation/). Then run the following:
 
 ```
 $ bundle exec jekyll serve
