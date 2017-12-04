@@ -9,6 +9,7 @@ baseurl: "/Flake8Rules" # the subpath of your site, e.g. /blog
 url: "https://lintlyci.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gmcconnaughey
 github_username:  grantmcconnaughey
+google_analytics: UA-51900491-5
 
 # Build settings
 markdown: kramdown
