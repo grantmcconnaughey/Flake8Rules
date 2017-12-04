@@ -22,6 +22,8 @@ collections:
   rules_json:
     output: true
     permalink: /api/rules/:title/
+# _rules_json is a symlink to the _rules directory. This is a Jekyll hack to render multiple
+# files with different layouts based on the same collection of pages.
 defaults:
   - scope:
       path: "_rules_json"
