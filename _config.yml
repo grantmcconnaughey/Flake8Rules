@@ -4,7 +4,7 @@ email: grantmcconnaughey@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Descriptions and examples for each of the rules in Flake8 (pyflakes, pycodestyle, and mccabe).
 baseurl: "/Flake8Rules" # the subpath of your site, e.g. /blog
-url: "https://lintlyci.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://flake8rules.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gmcconnaughey
 github_username:  grantmcconnaughey
 google_analytics: UA-51900491-5

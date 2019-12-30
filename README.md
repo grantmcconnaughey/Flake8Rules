@@ -13,7 +13,7 @@ This endpoints returns a single Flake8 rule.
 **Heads up:** This endpoint returns JSON content but the Content-Type is set to `text/html`. This is due to Jekyll's inability to generate files with permalinks that end in `.json`.
 
 ```
-$ curl https://lintlyci.github.io/Flake8Rules/api/rules/E111/
+$ curl https://flake8rules.com/Flake8Rules/api/rules/E111/
 {
     "code": "E111",
     "message": "Indentation is not a multiple of four",
@@ -32,7 +32,7 @@ $ curl https://lintlyci.github.io/Flake8Rules/api/rules/E111/
 This endpoint returns a list of all Flake8 rules.
 
 ```
-$ curl https://lintlyci.github.io/Flake8Rules/api/rules.json
+$ curl https://flake8rules.com/Flake8Rules/api/rules.json
 [
     {
         "code": "F812",
