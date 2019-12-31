@@ -52,3 +52,10 @@ To run the jekyll development server first [install Jekyll](https://jekyllrb.com
 ```
 $ bundle exec jekyll serve
 ```
+
+### Documenting Errors
+
+* pyflakes error codes: http://flake8.pycqa.org/en/latest/user/error-codes.html#error-violation-codes
+* pycodestyle error codes: http://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
+
+Examples of pycodestyle error violations can be found in the project's [test suite](https://github.com/PyCQA/pycodestyle/tree/master/testsuite). This is useful for understanding violations and documenting them.
