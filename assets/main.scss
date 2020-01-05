@@ -4,11 +4,24 @@
 
 @import "minima";
 
+.page-link {
+    font-size: 16px;
+}
+
+.page-link .icon {
+    bottom: 2px;
+    position: relative;
+}
+
 .rules-table {
     margin-bottom: 1.5em;
     width: 100%;
 
     tr td:first-of-type {
         width: 3em;
+    }
+
+    td {
+        vertical-align: top;
     }
 }
