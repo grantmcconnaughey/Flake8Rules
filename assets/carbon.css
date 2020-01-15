@@ -1,0 +1,139 @@
+/* Carbon on home page */
+.carbon--sidebar #carbonads {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .carbon--sidebar #carbonads {
+    display: flex;
+    max-width: 330px;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, .1);
+  }
+
+  .carbon--sidebar #carbonads a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .carbon--sidebar #carbonads a:hover {
+    color: inherit;
+  }
+
+  .carbon--sidebar #carbonads span {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .carbon--sidebar #carbonads .carbon-wrap {
+    display: flex;
+  }
+
+  .carbon--sidebar .carbon-img {
+    display: block;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .carbon--sidebar .carbon-img img {
+    display: block;
+  }
+
+  .carbon--sidebar .carbon-text {
+    font-size: 13px;
+    padding: 10px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .carbon--sidebar .carbon-poweredby {
+    display: block;
+    padding: 8px 10px;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-weight: 600;
+    font-size: 9px;
+    line-height: 1;
+  }
+
+
+/* Carbon on rule pages */
+  .carbon--page  {
+    display: block;
+    overflow: hidden;
+    max-width: 1024px;
+    position: relative;
+    background-color: hsl(0, 0%, 99%);
+    border: solid 1px #eee;
+    font-size: 20px;
+    box-sizing: content-box;
+  }
+
+  .carbon--page  > span {
+    display: block;
+  }
+
+  .carbon--page  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .carbon--page  a:hover {
+    color: inherit;
+  }
+
+  .carbon--page .carbon-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .carbon--page .carbon-img {
+    display: block;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .carbon--page .carbon-img img {
+    display: block;
+    height: 90px;
+    width: auto;
+  }
+
+  .carbon--page .carbon-text {
+    display: block;
+    padding: 0 1em;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  .carbon--page .carbon-poweredby {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 6px 10px;
+    background: repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 5px,
+                    hsla(0, 0%, 0%, 0.025) 5px,
+                    hsla(0, 0%, 0%, 0.025) 10px
+    )
+    hsla(203, 11%, 95%, 0.8);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    font-size: 8px;
+    border-top-left-radius: 4px;
+    line-height: 1;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 759px) {
+    .carbon--page .carbon-text {
+      font-size: 14px;
+    }
+  }

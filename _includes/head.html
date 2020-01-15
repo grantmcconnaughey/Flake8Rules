@@ -6,7 +6,19 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="//unpkg.com/purecss@1.0.1/build/base-min.css">
+    <link rel="stylesheet" href="//unpkg.com/purecss@1.0.1/build/grids-min.css">
+    <link rel="stylesheet" href="//unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="//unpkg.com/purecss@1.0.1/build/base-min.css">
+    <link rel="stylesheet" href="//unpkg.com/purecss@1.0.1/build/grids-min.css">
+    <link rel="stylesheet" href="//unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+  <!--<![endif]-->
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/carbon.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
