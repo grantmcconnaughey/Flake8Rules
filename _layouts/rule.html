@@ -19,7 +19,7 @@ layout: default
 
       <ul>
         {% for link in page.links %}
-        <li><a href="{{ link }}">{{ link }}</a></li>
+        <li><a href="{{ link }}" onclick="captureOutboundLink('{{ link }}'); return false;">{{ link }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}

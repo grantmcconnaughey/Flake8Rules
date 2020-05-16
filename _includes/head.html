@@ -25,6 +25,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
   {% if jekyll.environment == 'production' and site.google_analytics %}
-  {% include google-analytics.html %}
+    {% include google-analytics.html %}
+  {% else %}
+    <script>
+      var captureOutboundLink = function (url) {}
+    </script>
   {% endif %}
 </head>
